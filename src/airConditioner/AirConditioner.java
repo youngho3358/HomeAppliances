@@ -5,6 +5,15 @@ import main.HomeAppliances;
 public class AirConditioner implements HomeAppliances {
 	
 	private int temperature;
+	private boolean isOn = false;
+	
+	// 에어컨 on/off getter / setter
+	public boolean isOn() {
+		return isOn;
+	}
+	public void setOn(boolean isOn) {
+		this.isOn = isOn;
+	}
 	
 	// 온도 getter / setter
 	public int getTemperature() {
@@ -18,16 +27,17 @@ public class AirConditioner implements HomeAppliances {
 	@Override
 	public void turnOn() {
 		System.out.println("에어컨을 켭니다.");
-		temperature = 22;
-		System.out.println("현재 온도 : " + getTemperature());
+		isOn = true;
+		temperature = 25;
+		System.out.println("기본 설정 온도 : " + getTemperature());
 	}
 
 	// 에어컨 종료
 	@Override
 	public void turnOff() {
 		System.out.println("에어컨을 끕니다.");
+		isOn = false;
 	}
-	
 	
 	
 
