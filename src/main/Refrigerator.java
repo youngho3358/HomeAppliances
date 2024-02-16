@@ -1,6 +1,6 @@
 package main;
 
-public class Airconditional implements HomeAppliances{
+public class Refrigerator implements HomeAppliances{
 
     private int temperature;
 
