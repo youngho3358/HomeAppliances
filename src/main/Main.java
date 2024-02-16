@@ -11,12 +11,16 @@ public class Main {
 		
 		while(true) {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("제어할 가전제품 선택 : 1. 냉장고, 2. 에어컨, 3. 종료");
+			System.out.println("\n제어할 가전제품 선택 : 1. 냉장고, 2. 에어컨, 3. 종료");
 			System.out.print("입력 >>> ");
 			int option = sc.nextInt();
 			
 			if(option == 1) {
-				
+				int refOption=0;
+				while(refOption!=5) {
+					refOption = refrigerator.showOption();
+					refrigerator.doOption(refOption);
+				}
 			}
 			
 			if(option == 2) {
@@ -31,7 +35,7 @@ public class Main {
 			}
 			
 			if(option == 3) {
-				System.out.println("종료합니다.");
+				System.out.println("\n종료합니다.");
 				break;
 			}
 		}
