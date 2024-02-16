@@ -11,22 +11,29 @@ public class Main {
 		
 		while(true) {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("가전제품 선택 : 1. 냉장고, 2. 에어컨, 3. 종료");
+			System.out.println("제어할 가전제품 선택 : 1. 냉장고, 2. 에어컨, 3. 종료");
+			System.out.print("입력 >>> ");
 			int option = sc.nextInt();
 			
 			if(option == 1) {
-				if(refrigerator.isOpen()) 	refrigerator.turnOff();
-				else 						refrigerator.turnOn();
+				
 			}
 			
 			if(option == 2) {
-				if(airConditioner.isOn()) 	airConditioner.turnOff();
-				else 						airConditioner.turnOn();
+				int airOption;
+				while(airConditioner.getOption()!=5) {
+					// 옵션 선택
+					airOption = airConditioner.chooseOption();
+					// 옵션 실행
+					airConditioner.doOption(airOption);
+				}
+				System.out.println("이전으로 이동합니다.");
 			}
 			
-			if(option == 3) 
+			if(option == 3) {
 				System.out.println("종료합니다.");
 				break;
+			}
 		}
 	}
 }
